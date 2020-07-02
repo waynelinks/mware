@@ -1,6 +1,6 @@
 {
   "name": "@bigoncloud/mware",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
-    "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build "
+    "pub": "git add . && git commit -m \"Updates\" && npm run build && npm version patch && npm publish --access public"
   },
   "dependencies": {
     "@types/cookie-session": "^2.0.41",
