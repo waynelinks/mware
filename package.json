@@ -1,12 +1,12 @@
 {
   "name": "@bigoncloud/mware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [
     "build/**/*"
   ],
-  "license": "MIT", 
+  "license": "MIT",
   "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
