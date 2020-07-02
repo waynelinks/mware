@@ -8,6 +8,7 @@ export * from './errors/Request_Validation_Error'
 export * from './errors/Server_Error'
 export * from './errors/Unauthorized_Error'
 
+export * from './middleware/common_middleware'
 export * from './middleware/current_user'
 export * from './middleware/error_handler'
 export * from './middleware/require_auth'
