@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
 
-import { NOT_FOUND_ERROR } from '../errors/Not_Found_Error'
+import { NotFoundError } from '../errors/NotFoundError'
 
 export const notFound = (app: any) => {
   app.all('*', async (req: Request, res: Response) => {
-    throw new NOT_FOUND_ERROR(`Can't find ${req.originalUrl} on this server!`)
+    throw new NotFoundError(`Can't find ${req.originalUrl} on this server!`)
   })
 }

@@ -30,6 +30,7 @@ export const currentUser = (
     ) as UserPayload
 
     req.currentUser = payload
+  // eslint-disable-next-line no-empty
   } catch (err) {}
 
   return next()

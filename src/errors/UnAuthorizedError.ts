@@ -1,4 +1,4 @@
-import { CustomError } from './Custom_Error'
+import { CustomError } from './CustomError'
 import { UNAUTHORIZED } from '../constants/response_codes'
 
 export class UnAuthorizedError extends CustomError {
