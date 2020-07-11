@@ -1,14 +1,14 @@
-import { CUSTOM_ERROR } from './Custom_Error'
+import { CustomError } from './Custom_Error'
 import { UNAUTHORIZED } from '../constants/response_codes'
 
-export class UNAUTHORIZED_ERROR extends CUSTOM_ERROR {
+export class UnAuthorizedError extends CustomError {
   statusCode = UNAUTHORIZED
   reason = 'Not Authorized!'
 
   constructor() {
     super('Not Authorized!')
 
-    Object.setPrototypeOf(this, UNAUTHORIZED_ERROR.prototype)
+    Object.setPrototypeOf(this, UnAuthorizedError.prototype)
   }
 
   serializeErrors() {
