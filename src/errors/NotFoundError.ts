@@ -4,10 +4,8 @@ import { NOT_FOUND } from '../constants/response_codes'
 export class NotFoundError extends CustomError {
   statusCode = NOT_FOUND
 
-  reason = 'Route not found'
-
-  constructor() {
-    super('Route not found')
+  constructor(public message: string) {
+    super(message)
 
     Object.setPrototypeOf(this, NotFoundError.prototype)
   }
@@ -15,7 +13,7 @@ export class NotFoundError extends CustomError {
   serializeErrors() {
     return [
       {
-        message: this.reason,
+        message: this.message,
       },
     ]
   }
