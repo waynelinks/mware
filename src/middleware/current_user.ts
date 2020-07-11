@@ -31,6 +31,6 @@ export const currentUser = (
 
     req.currentUser = payload
   } catch (err) {}
-  
+
   return next()
 }

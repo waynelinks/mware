@@ -1,14 +1,18 @@
 import { Request, Response, NextFunction } from 'express'
+import { CustomError } from '../errors/Custom_Error'
 
-import { CUSTOM_ERROR } from '../errors/Custom_Error'
-import { BAD_REQUEST } from '../constants/response_codes'
-
-export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
-  if (err instanceof CUSTOM_ERROR) {
+export const errorHandler = (
+  err: Error,
+  req: Request,
+  res: Response,
+  next: NextFunction,
+// eslint-disable-next-line consistent-return
+) => {
+  if (err instanceof CustomError) {
     return res.status(err.statusCode).send({ errors: err.serializeErrors() })
   }
 
-  return res.status(BAD_REQUEST).send({
+  res.status(400).send({
     errors: [{ message: 'Something went wrong' }],
   })
 }
